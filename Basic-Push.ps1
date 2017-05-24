@@ -7,7 +7,7 @@ configuration SFTP_Servers
             [String[]]$ComputerName
           )
    
-    Import-DscResource -ModuleName xPSDesiredStateConfiguration 
+    Import-DscResource -ModuleName xPSDesiredStateConfiguration -ModuleVersion 6.4.0.0
     Import-DscResource -ModuleName cNtfsAccessControl 
     Import-LocalizedData -BaseDirectory .\ -FileName sftp-config.psd1 -BindingVariable Data
     
