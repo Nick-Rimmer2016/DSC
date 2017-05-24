@@ -1,4 +1,5 @@
 configuration SFTP_Servers
+
 {
     
     param (
@@ -16,6 +17,7 @@ configuration SFTP_Servers
     {
         File DSCResourceFolder
         {
+            Ensure = "Present"
             SourcePath = "\\dc1\dscresource"
             DestinationPath = "C:\Program Files\WindowsPowerShell\Modules"
             Recurse = $true
@@ -24,9 +26,9 @@ configuration SFTP_Servers
 
         File BinFilePresent
         {
+            Ensure = "Present"
             SourcePath = "\\dc1\dscresource\test.bin"
-            DestinationPath = "c:\test\home"
-            Recurse = $true
+            DestinationPath = $data.bin
             Type = "File"
             DependsOn = '[File]CreateFileStructure' 
         }
@@ -42,7 +44,7 @@ configuration SFTP_Servers
         cNtfsPermissionEntry PermissionSet1
         {
         Ensure = 'Present'
-        Path = "C:\test\home"
+        Path = "C:\Test\Home"
         Principal = $data.Username
         AccessControlInformation = @(
             cNtfsAccessControlInformation
@@ -59,4 +61,4 @@ configuration SFTP_Servers
 }
 }
 
-SFTP_Servers  -computername APP1,APP2
+SFTP_Servers -computername APP1,APP2
