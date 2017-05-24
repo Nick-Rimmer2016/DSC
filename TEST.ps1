@@ -1,4 +1,4 @@
-Configuration webservice
+Configuration superwebservice
 {
     param ($MachineName)
         Node $MachineName
@@ -18,4 +18,4 @@ Configuration webservice
         }
 }
 
-webservice -MachineName localhost
+superwebservice -MachineName localhost
