@@ -59,4 +59,4 @@ configuration SFTP_Servers
 }
 }
 
-SFTP_Servers -OutputPath C:\Scripts\DSC -computername APP1,APP2
+SFTP_Servers  -computername APP1,APP2
