@@ -10,7 +10,7 @@ psedit "C:\Program Files\WindowsPowerShell\Modules\CheckEVLSource\DSCResources\C
 
 $source = "TEST"
 [System.Diagnostics.EventLog]::SourceExists($source)
-New-EventLog   -LogName Application -Source AGDSC
+New-EventLog   -LogName Application -Source TEST
 Remove-EventLog -source TEST -Verbose
 
 configuration Test
@@ -21,10 +21,10 @@ configuration Test
     node localhost
     {
         
-        CheckEVLSource AGDSC
+        CheckEVLSource TEST
         {
            Ensure = "Present"
-           Source = "AGDSC"
+           Source = "TEST"
         }
 
     }
