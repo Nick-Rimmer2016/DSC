@@ -1,3 +1,3 @@
 # DSC
 
-Me messing about in GitHub
+Some DSC Basics
